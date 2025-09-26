@@ -1,4 +1,4 @@
-# -------------------- step3.md --------------------
+
 ### **Task 3: Customize the Welcome Page**
 
 We want to serve a custom welcome page instead of the default Nginx page. A file named `welcome.html` has been placed in your home directory (`/root`).
