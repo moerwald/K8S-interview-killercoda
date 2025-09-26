@@ -43,7 +43,7 @@
         {"file": "broken.yaml", "target": "~/"}
 
       ]
-    }
+    },
     "finish": {
       "text": "finish.md"
     }
