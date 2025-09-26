@@ -1,0 +1,58 @@
+{
+  "title": "Kubernetes Interview: Hands-on Assessment",
+  "description": "Six practical tasks to assess Kubernetes fundamentals to intermediate ops skills using a temporary multi-node cluster.",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Task 01 \u2014 Deploy",
+        "text": "step1.md",
+        "verify": "verify/step1-verify.sh"
+      },
+      {
+        "title": "Task 02 \u2014 Ingress",
+        "text": "step2.md",
+        "verify": "verify/step2-verify.sh"
+      },
+      {
+        "title": "Task 03 \u2014 Config & Secrets",
+        "text": "step3.md",
+        "verify": "verify/step3-verify.sh"
+      },
+      {
+        "title": "Task 04 \u2014 Debug CrashLoop",
+        "text": "step4.md",
+        "verify": "verify/step4-verify.sh"
+      },
+      {
+        "title": "Task 05 \u2014 HPA",
+        "text": "step5.md",
+        "verify": "verify/step5-verify.sh"
+      },
+      {
+        "title": "Task 06 \u2014 NetworkPolicy",
+        "text": "step6.md",
+        "verify": "verify/step6-verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Kubernetes",
+        "href": "https://kubernetes.io/docs/"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
