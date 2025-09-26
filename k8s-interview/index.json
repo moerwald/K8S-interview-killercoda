@@ -1,65 +1,45 @@
 {
-  "title": "Kubernetes Interview: Hands-on Assessment",
-  "description": "Six practical tasks to assess Kubernetes fundamentals to intermediate ops skills using a temporary multi-node cluster.",
-  "difficulty": "intermediate",
+  "title": "Kubernetes Basics Interview Scenario",
+  "description": "A short scenario to test fundamental Kubernetes deployment and troubleshooting skills.",
+  "difficulty": "beginner",
+  "time": "20 minutes",
   "details": {
+    "steps": [
+      {
+        "title": "Step 1: Deploy an Application",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2: Expose the Deployment",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3: External Configuration",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4: Troubleshoot a Failing Pod",
+        "text": "step4.md"
+      }
+    ],
     "intro": {
       "text": "intro.md"
     },
-    "steps": [
-      {
-        "title": "Task 01 \u2014 Deploy",
-        "text": "step1.md",
-        "verify": "verify/step1-verify.sh"
-      },
-      {
-        "title": "Task 02 \u2014 Ingress",
-        "text": "step2.md",
-        "verify": "verify/step2-verify.sh"
-      },
-      {
-        "title": "Task 03 \u2014 Config & Secrets",
-        "text": "step3.md",
-        "verify": "verify/step3-verify.sh"
-      },
-      {
-        "title": "Task 04 \u2014 Debug CrashLoop",
-        "text": "step4.md",
-        "verify": "verify/step4-verify.sh"
-      },
-      {
-        "title": "Task 05 \u2014 HPA",
-        "text": "step5.md",
-        "verify": "verify/step5-verify.sh"
-      },
-      {
-        "title": "Task 06 \u2014 NetworkPolicy",
-        "text": "step6.md",
-        "verify": "verify/step6-verify.sh"
-      }
-    ],
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "welcome.html", "target": "/root"},
+        {"file": "broken-app.js", "target": "/root"},
+        {"file": "package.json", "target": "/root"}
+      ]
     }
   },
-  "assets": {
-    "host01": [
-      {"file": "welcome.html", "target": "/root"},
-      {"file": "broken-app.js", "target": "/root"},
-      {"file": "package.json", "target": "/root"}
-    ]
-  },
   "environment": {
-    "uilayout": "terminal",
-    "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "Kubernetes",
-        "href": "https://kubernetes.io/docs/"
-      }
-    ]
+    "uilayout": "terminal-ide"
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "kubernetes-kubeadm-1node"
   }
 }
