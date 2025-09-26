@@ -40,7 +40,7 @@
     ],
     "assets": {
       "controlplane": [
-        {"file": "broken.yaml", "target": "~/"}
+        {"file": "broken.yaml", "target": "/root"}
 
       ]
     },
