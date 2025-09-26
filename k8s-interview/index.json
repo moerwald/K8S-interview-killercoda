@@ -38,6 +38,12 @@
         "verify": "verify/step6-verify.sh"
       }
     ],
+    "assets": {
+      "controlplane": [
+        {"file": "broken.yaml", "target": "~/"}
+
+      ]
+    }
     "finish": {
       "text": "finish.md"
     }
