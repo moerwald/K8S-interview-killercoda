@@ -1,11 +1,11 @@
 {
   "title": "Kubernetes Interview Scenarios",
-  "description": "Collection of Kubernetes interview tasks and playgrounds.",
+  "description": "Hands-on tasks for Kubernetes interviews.",
   "scenarios": [
     {
       "path": "k8s-interview",
       "title": "Kubernetes Interview (Full Assignment)",
-      "description": "Six hands-on tasks: Deploy, Ingress, Config+Secrets, CrashLoop debug, HPA, NetworkPolicy.",
+      "description": "Six tasks: Deploy, Ingress, Config+Secrets, CrashLoop debug, HPA, NetworkPolicy.",
       "difficulty": "intermediate"
     }
   ]
