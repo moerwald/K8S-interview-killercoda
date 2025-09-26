@@ -1,17 +1,22 @@
-## Task 02 — Ingress (namespace `t2`)
 
-Expose the app at `http://web.local/` via nginx Ingress.
+### **Task 2: Expose the Deployment with a Service**
 
-**Commands**
+Now that the pods are running, you need to make them accessible within the cluster.
 
-```bash
-kubectl create ns t2
-kubectl -n t2 apply -f /root/killercoda/assets/deploy.yaml
-kubectl -n t2 apply -f /root/killercoda/assets/ingress.yaml
-kubectl -n ingress-nginx get pods
-kubectl -n t2 get ingress
-# Test from a pod:
-kubectl -n t2 run dbg --image=busybox:1.36 --restart=Never -it -- sh -c "wget -qO- http://web"
-```
+**Requirements:**
+-   Create a file named `service.yaml`.
+-   The Service should be named `web-service`.
+-   It must be of type `NodePort`.
+-   It should select pods with the label `app: web`.
+-   It should expose port `80` and target the container's port `80`.
 
-> For host header testing from the node, add `web.local` to `/etc/hosts` (optional in this environment).
+Apply the service manifest.
+
+**Verification:**
+1.  Check that the service was created: `kubectl get service web-service`
+2.  Find the assigned NodePort and test it using `curl`. You can get the port with this command:
+    `NODE_PORT=$(kubectl get svc web-service -o jsonpath='{.spec.ports[0].nodePort}')`
+3.  Then, test the connection:
+    `curl localhost:$NODE_PORT`
+
+You should see the default "Welcome to nginx!" page.

@@ -1,17 +1,21 @@
-## Task 01 — Deploy (namespace `t1`)
 
-Deploy a 3-replica stateless app with probes and resource requests/limits. Verify a healthy rollout.
+### **Task 1: Create a Deployment**
 
-**Commands**
+Your first task is to deploy a simple Nginx web server.
 
-```bash
-kubectl create ns t1
-kubectl -n t1 apply -f /root/killercoda/assets/deploy.yaml
-kubectl -n t1 get deploy,rs,pods -o wide
-kubectl -n t1 rollout status deploy/web
-```
+**Requirements:**
+-   Create a file named `deployment.yaml`.
+-   The Deployment should be named `web-server`.
+-   It should manage **2 replicas**.
+-   The container image must be `nginx:1.25`.
+-   The pods should have the label `app: web`.
+-   The container should expose port `80`.
 
-**What to check**
+Once you have created the file, apply it to the cluster.
 
-- Probes pass; pods Ready with `RESTARTS 0`.
-- Uses `rollout status` to confirm success.
+**Verification:**
+You can verify your work by running:
+`kubectl get deployment web-server`
+`kubectl get pods -l app=web`
+
+You should see the deployment and two running pods.

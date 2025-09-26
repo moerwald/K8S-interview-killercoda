@@ -1,0 +1,13 @@
+
+# -------------------- package.json --------------------
+{
+  "name": "broken-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app with a bug",
+  "main": "broken-app.js",
+  "scripts": {
+    "start": "node broken-app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

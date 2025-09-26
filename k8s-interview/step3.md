@@ -1,17 +1,19 @@
-## Task 03 — Config & Secrets (namespace `t3`)
+# -------------------- step3.md --------------------
+### **Task 3: Customize the Welcome Page**
 
-Externalize configuration using a ConfigMap and Secret. The app should print them.
+We want to serve a custom welcome page instead of the default Nginx page. A file named `welcome.html` has been placed in your home directory (`/root`).
 
-**Commands**
+**Requirements:**
+1.  Create a **ConfigMap** named `web-content` from the file `/root/welcome.html`.
+2.  **Modify your `deployment.yaml`** to mount this ConfigMap into the Nginx pods.
+    -   The content of the ConfigMap should replace the default `index.html` at `/usr/share/nginx/html/index.html`.
+3.  Re-apply your modified deployment.
 
-```bash
-kubectl create ns t3
-kubectl -n t3 apply -f /root/killercoda/assets/config-secrets.yaml
-kubectl -n t3 port-forward svc/web 18080:80 >/dev/null 2>&1 &
-sleep 2 && curl -s http://127.0.0.1:18080/ | head -n 5
-```
+**Hints:**
+-   You'll need to add `volumes` and `volumeMounts` sections to your Deployment spec.
+-   The `subPath` property in `volumeMounts` is very useful for mounting a single file.
 
-**What to check**
+**Verification:**
+After the pods have been updated, run the `curl` command from the previous step again. You should now see the content from the `welcome.html` file.
 
-- Output contains GREETING and API_KEY values.
-- Candidate mentions Secrets are base64 by default (not encrypted without KMS).
+`NODE_PORT=$(kubectl get svc web-service -o jsonpath='{.spec.ports[0].nodePort}') && curl localhost:$NODE_PORT`
