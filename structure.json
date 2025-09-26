@@ -1,7 +1,7 @@
 {
   "title": "Kubernetes Interview Scenarios",
-  "description": "Hands-on tasks for Kubernetes interviews.",
-  "scenarios": [
+  "description": "Collection of Kubernetes interview tasks and playgrounds.",
+  "items": [
     {
       "path": "k8s-interview",
       "title": "Kubernetes Interview (Full Assignment)",
